@@ -13,5 +13,11 @@
         skills to build robust and efficient web applications.
     </p>
     <div class="mb-3 text-3xl fade-in">What I bring to the table</div>
-    <p class="mb-3" id="skill-container"></p>
+
+    <div role="tablist" class="tabs tabs-boxed">
+        @for (tab of columns; track $index) {
+        <a role="tab" routerLink="/home" [queryParams]="{tab:tab}" [ngClass]="{'tab-active':tab===tabValue}"
+            class="tab">{{tableHead[tab]}}</a>
+        }
+    </div>
 </div>
