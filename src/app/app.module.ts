@@ -6,19 +6,36 @@ import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AtSign, CircleUserRound, Github, Instagram, LayoutGrid, Linkedin, LucideAngularModule } from 'lucide-angular';
+import { environment } from '../environments/environment';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './components/about/about.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    AboutComponent,
+    ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LucideAngularModule.pick({ Github, Linkedin, Instagram, AtSign, LayoutGrid, CircleUserRound }),
+    BrowserAnimationsModule
   ],
   providers: [
-    provideFirebaseApp(() => initializeApp({"projectId":"ayush-portfolio-3","appId":"1:1074594437014:web:243c6c830a37fd10cfefb7","databaseURL":"https://ayush-portfolio-3-default-rtdb.firebaseio.com","storageBucket":"ayush-portfolio-3.appspot.com","locationId":"asia-northeast3","apiKey":"AIzaSyB6w56v8PvO0xjge_8lAnTUE9Qqmpi59X4","authDomain":"ayush-portfolio-3.firebaseapp.com","messagingSenderId":"1074594437014","measurementId":"G-N6D1Z7MYME"})),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
+    provideStorage(() => getStorage())
   ],
   bootstrap: [AppComponent]
 })
