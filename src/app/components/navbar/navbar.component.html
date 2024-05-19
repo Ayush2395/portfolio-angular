@@ -1,0 +1,41 @@
+<div class="bg-base-300 h-full px-4 flex flex-col items-center">
+    <!-- ========Profile picture========= -->
+    <div class="mask mask-hexagon w-4/5">
+        <img [src]="profilePic" alt="ayush" class="relative top-6">
+    </div>
+
+    <!-- ==========Introduction to me============= -->
+    <div class="mb-3">
+        <h4 class="text-xl text-center font-semibold text-info">Ayush K. Mandal</h4>
+        <span class="badge badge-neutral badge-sm w-full">&lt;Full-Stack Developer /&gt;</span>
+    </div>
+    <div class="flex justify-between w-1/2 mb-3">
+        <a href="https://github.com/Ayush2395" target="_blank">
+            <lucide-icon name="github"></lucide-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/ayush-03-kumar" target="_blank">
+            <lucide-icon name="linkedin"></lucide-icon>
+        </a>
+        <a href="https://instagram.com/official_mandal_saab" target="_blank">
+            <lucide-icon name="instagram"></lucide-icon>
+        </a>
+    </div>
+    <ul class="justify-self-start w-4/5  text-3xl">
+        <li class="mb-5">
+            <a class="flex items-center" routerLinkActive="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-secondary font-bold to-[69%]"
+                routerLink="/home"><lucide-icon class="inline-block me-2 text-sm" size="20" name="layout-grid"></lucide-icon> Home</a>
+        </li>
+        <li class="mb-5">
+            <a class="flex items-center" routerLinkActive="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-secondary font-bold to-[69%]"
+                routerLink="/about"><lucide-icon class="inline-block me-2 text-sm" size="20" name="circle-user-round"></lucide-icon> About</a>
+        </li>
+        <li class="mb-5">
+            <a class="flex items-center" routerLinkActive="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-secondary font-bold to-[69%]"
+                routerLink="/projects"><lucide-icon class="inline-block me-2 text-sm" size="20" name="github"></lucide-icon> Projects</a>
+        </li>
+        <li class="mb-5">
+            <a class="flex items-center" routerLinkActive="text-transparent bg-clip-text bg-gradient-to-tr from-primary to-secondary font-bold to-[69%]"
+                routerLink="/contact"><lucide-icon class="inline-block me-2 text-sm" size="20" name="at-sign"></lucide-icon> Contact</a>
+        </li>
+    </ul>
+</div>

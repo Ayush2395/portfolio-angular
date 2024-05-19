@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ChildrenOutletContexts } from '@angular/router';
+import { routerAnimation } from './core/common/animation/routeAnimation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  animations: [routerAnimation]
 })
 export class AppComponent {
-  title = 'portfolio';
+  private routeContext = inject(ChildrenOutletContexts);
+
+  public getAnimationData = () => this.routeContext.getContext('primary')?.route?.snapshot.data['animation'];
 }
